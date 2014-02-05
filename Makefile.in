@@ -1,0 +1,14 @@
+CUTEST=@CUTEST@
+SIFDECODE=@SIFDECODE@
+ARCHDEFS=@ARCHDEFS@
+
+build:
+	@echo "Working in progress"
+
+install:
+	@echo "Working in progress"
+
+show:
+	@echo CUTEST=${CUTEST}
+	@echo SIFDECODE=${SIFDECODE}
+	@echo ARCHDEFS=${ARCHDEFS}
