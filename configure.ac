@@ -45,8 +45,8 @@ AC_PROG_FC
 # Checks for system
 # Services
 
-FCFLAGS=" "
-CFLAGS=" "
+FCFLAGS=""
+CFLAGS=""
 
 AC_ARG_ENABLE([warnings],
     AS_HELP_STRING([--enable-warnings], [Enable warnings]),

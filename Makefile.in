@@ -12,15 +12,18 @@ export OS=@OS@
 export OPSYS=@OPSYS@
 
 # Compilers
-export FC=@FC@
 export BASIC=-c -fno-second-underscore
 export MBASIC=-fno-second-underscore
 export LIBCMD=
+export FC=@FC@
+export FFLAGS=@FCFLAGS@ $(BASIC) $(OPTIMIZATION) $(DEBUG) $(MODULES) $(USUAL)
 export CC=@CC@
+export CFLAGS=@CFLAGS@ $(CCBASIC) $(OPTIMIZATION) $(CCDEBUG) -I$(CUTEST)/include
 
 # Commands
 export AWK=awk
 export CAT=cat
+export CP=cp
 export GREP=grep
 export HEAD=head
 export LN=LN

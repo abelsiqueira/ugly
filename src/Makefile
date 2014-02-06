@@ -1,6 +1,36 @@
-OBJS=${OBJDIR}/single
-OBJS=${OBJDIR}/double
-MOD=${MODDIR}/$(PRECIS)
+export OBJ=${OBJDIR}/${PRECIS}
+export MOD=${MODDIR}/${PRECIS}
+export PKG=${PKGDIR}/${PRECIS}
+
+#  names of random libraries
+
+export LC=$(OBJ)/libcutest.a
+export BLC=$(OBJ)/libcutest_blas.a
+export DLC=$(OBJ)/libcutest_dummy.a
+export LLC=$(OBJ)/libcutest_lapack.a
+
+#  Libraries used
+
+export LIBS=-lcutest -lcutest_lapack -lcutest_blas
+export PLIBS=$(LIBS) -lcutest_problem
+
+#  Archive manipulation strings
+
+export ARR=$(AR) -rc $(LC)
+export RMARFILE=$(CUTEST)/bin/rmarfile $(AR) $(GREP) $(LC)
+export RMOBFILE=$(CUTEST)/bin/rmobfile $(RM) $(OBJ)
+
+export BARR=$(AR) -rc $(BLC)
+export BRMARFILE=$(CUTEST)/bin/rmarfile $(AR) $(GREP) $(BLC)
+
+export DARR=$(AR) -rc $(DLC)
+
+export LARR=$(AR) -rc $(LLC)
+export LRMARFILE=$(CUTEST)/bin/rmarfile $(AR) $(GREP) $(LLC)
+
+#  sed scripts
+
+export CSEDS=$(CUTEST)/seds/cutersize.sed
 
 build: all
 
