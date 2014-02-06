@@ -1,9 +1,67 @@
-CUTEST=@CUTEST@
-SIFDECODE=@SIFDECODE@
-ARCHDEFS=@ARCHDEFS@
+export VERSION=@VERSION@
+export PRECIS=@PRECIS@
 
-build:
-	@echo "Working in progress"
+export CUTEST=@CUTEST@
+export CUTEST_REQUIRED=@CUTEST_REQUIRED@
+export SIFDECODE=@SIFDECODE@
+export SIFDECODE_REQUIRED=@SIFDECODE_REQUIRED@
+export ARCHDEFS=@ARCHDEFS@
+export MCH=@MCH@
+export MACHINE=@MACHINE@
+export OS=@OS@
+export OPSYS=@OPSYS@
+
+# Compilers
+export FC=@FC@
+export BASIC=-c -fno-second-underscore
+export MBASIC=-fno-second-underscore
+export LIBCMD=
+export CC=@CC@
+
+# Commands
+export AWK=awk
+export CAT=cat
+export GREP=grep
+export HEAD=head
+export LN=LN
+export LS=ls
+export MKDIR=mkdir -p
+export MV=mv
+export RANLIB=ranlib
+export SED=sed
+export TAIL=tail
+
+export OBJDIR=${CUTEST}/objects/${VERSION}
+export MODDIR=${CUTEST}/modules/${VERSION}
+export PKGDIR=${CUTEST}/packages/${VERSION}
+export SEDS=$(CUTEST)/seds/$(PRECIS).sed
+
+.PHONY: sifdecode
+
+all: sifdecode build
+
+sifdecode:
+	@echo "Building SFIDecode ..."
+	${MAKE} -r -C sifdecode build
+
+build: ${OBJDIR} ${MODDIR} ${PKGDIR}
+	@echo "Building CUTEst ..."
+	${MAKE} -C src build
+
+${OBJDIR}:
+	${MKDIR} ${OBJDIR}
+	${MKDIR} ${OBJDIR}/single
+	${MKDIR} ${OBJDIR}/double
+
+${MODDIR}:
+	${MKDIR} ${MODDIR}
+	${MKDIR} ${MODDIR}/single
+	${MKDIR} ${MODDIR}/double
+
+${PKGDIR}:
+	${MKDIR} ${PKGDIR}
+	${MKDIR} ${PKGDIR}/single
+	${MKDIR} ${PKGDIR}/double
 
 install:
 	@echo "Working in progress"
@@ -12,3 +70,16 @@ show:
 	@echo CUTEST=${CUTEST}
 	@echo SIFDECODE=${SIFDECODE}
 	@echo ARCHDEFS=${ARCHDEFS}
+	@echo MCH=${MCH}
+	@echo MACHINE=${MACHINE}
+	@echo OS=${OS}
+	@echo OPSYS=${OPSYS}
+
+clean:
+	${RM} -rf ${OBJDIR}
+	${RM} -rf ${MODDIR}
+	${RM} -rf ${PKGDIR}
+
+cleanall: clean
+	${MAKE} -C sifdecode cleanall
+	${MAKE} -C src cleanall
