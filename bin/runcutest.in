@@ -7,13 +7,10 @@
 #
 ###############################################################################
 
-if [[ ${CUTEST+set} != 'set' ]]; then
-    echo 'The environment variable CUTEST is not set. Aborting.'
-    exit 1
-fi
+CUTEST=@CUTEST@
+ARCHDEFS=@ARCHDEFS@
+ARCH=@MCH@
 
-. $CUTEST/bin/cutest_envcheck
-[[ $? != 0 ]] && exit $?
 . $ARCHDEFS/bin/helper_functions
 
 # Default settings

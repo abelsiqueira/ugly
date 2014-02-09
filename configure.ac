@@ -11,6 +11,8 @@ SIFDECODE=$(pwd)/sifdecode
 AC_SUBST(SIFDECODE)
 SIFDECODE_REQUIRED=1
 AC_SUBST(SIFDECODE_REQUIRED)
+MASTSIF=$(pwd)/sif
+AC_SUBST(MASTSIF)
 ARCHDEFS=$(pwd)/archdefs
 AC_SUBST(ARCHDEFS)
 MCH="pc64"
@@ -69,5 +71,7 @@ AC_ARG_ENABLE([single],
 AC_SUBST(PRECIS)
 
 AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([bin/cutest2matlab], [chmod +x bin/cutest2matlab])
+AC_CONFIG_FILES([bin/runcutest], [chmod +x bin/runcutest])
 
 AC_OUTPUT

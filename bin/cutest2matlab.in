@@ -7,19 +7,8 @@
 #
 ###############################################################################
 
-if [[ -z "$MYMATLABARCH" ]]; then
-  if [[ -z "$MYARCH" ]]; then
-    echo ' neither environment variable MYMATLABARCH nor MYARCH is set.'
-    echo ' Set MYMATLABARCH as a gfortran-installed version from the list '
-    /bin/ls -1 $CUTEST/versions 2>/dev/null
-    echo ' and re-run.'
-    exit 1
-  else
-    ARCH=${MYARCH}
-  fi
-else
-  ARCH=${MYMATLABARCH}
-fi
+CUTEST=@CUTEST@
+ARCH=@MCH@
 
 #  check that the architecture provided in MYMATLABARCH or MYARCH exists
 
