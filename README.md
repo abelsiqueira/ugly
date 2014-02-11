@@ -43,10 +43,10 @@ $ runcutest -p gen77 -D HS11
 
 ## CUTEst's Problems
 
-[x] It use SVN.
-[ ] It's architecture dependent.
-[ ] It's OS dependent.
-[x] It didn't follow the Unix installation steps.
+- [x] It use SVN.
+- [ ] It's architecture dependent.
+- [ ] It's OS dependent.
+- [x] It didn't follow the Unix installation steps.
 
 ## Solutions to CUTEst's Problems
 
