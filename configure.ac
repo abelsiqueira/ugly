@@ -23,8 +23,8 @@ OS="lnx"
 AC_SUBST(OS)
 OPSYS="Linux"
 AC_SUBST(OPSYS)
-VERSION="HEAD"
-AC_SUBST(VERSION)
+CMP="gfo"
+AC_SUBST(CMP)
 
 # Library
 #AC_CONFIG_MACRO_DIR([m4])
@@ -73,5 +73,6 @@ AC_SUBST(PRECIS)
 AC_CONFIG_FILES([Makefile])
 AC_CONFIG_FILES([bin/cutest2matlab], [chmod +x bin/cutest2matlab])
 AC_CONFIG_FILES([bin/runcutest], [chmod +x bin/runcutest])
+AC_CONFIG_FILES([sifdecode/bin/sifdecoder], [chmod +x sifdecode/bin/sifdecoder])
 
 AC_OUTPUT

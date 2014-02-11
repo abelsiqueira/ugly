@@ -35,47 +35,47 @@ export CSEDS=$(CUTEST)/seds/cutersize.sed
 build: all
 
 all: tools_${PRECIS}
-	$(MAKE) -C algencan algencan
-	$(MAKE) -C bobyqa bobyqa
-	$(MAKE) -C cg_descent cg_descent 
-	$(MAKE) -C cgplus cgplus 
-	$(MAKE) -C cobyla cobyla 
-	#$(MAKE) -C derchk derchk 
-	#$(MAKE) -C dfo dfo 
-	#$(MAKE) -C directsearch directsearch 
-	#$(MAKE) -C filtersd filtersd 
-	#$(MAKE) -C filtersqp filtersqp 
-	#$(MAKE) -C gen77 gen77 
-	#$(MAKE) -C gen90 gen90 
-	#$(MAKE) -C genc genc 
-	#$(MAKE) -C hrb hrb 
-	#$(MAKE) -C ipopt ipopt 
-	#$(MAKE) -C knitro knitro 
-	#$(MAKE) -C la04 la04 
-	#$(MAKE) -C lbfgs lbfgs 
-	#$(MAKE) -C lbfgsb lbfgsb 
-	#$(MAKE) -C lincoa lincoa 
-	#$(MAKE) -C loqo loqo 
-	#$(MAKE) -C minos minos 
-	#$(MAKE) -C newuoa newuoa 
-	#$(MAKE) -C nitsol nitsol 
-	#$(MAKE) -C nlpqlp nlpqlp 
-	#$(MAKE) -C npsol npsol 
-	#$(MAKE) -C pds pds 
-	#$(MAKE) -C pennlp pennlp 
-	#$(MAKE) -C praxis praxis 
-	#$(MAKE) -C ql ql 
-	#$(MAKE) -C qplib qplib 
-	#$(MAKE) -C snopt snopt 
-	#$(MAKE) -C spg spg 
-#	#$(MAKE) -C sqic #                 
-	#$(MAKE) -C stats stats 
-	#$(MAKE) -C stenmin stenmin 
-	#$(MAKE) -C tenmin tenmin 
-	#$(MAKE) -C test test 
-	#$(MAKE) -C tron tron 
-	#$(MAKE) -C uncmin uncmin 
-	#$(MAKE) -C vf13 vf13 
+	$(MAKE) -r -C algencan algencan
+	$(MAKE) -r -C bobyqa bobyqa
+	$(MAKE) -r -C cg_descent cg_descent
+	$(MAKE) -r -C cgplus cgplus
+	$(MAKE) -r -C cobyla cobyla
+	#$(MAKE) -r -C derchk derchk
+	#$(MAKE) -r -C dfo dfo
+	#$(MAKE) -r -C directsearch directsearch
+	#$(MAKE) -r -C filtersd filtersd
+	#$(MAKE) -r -C filtersqp filtersqp
+	$(MAKE) -r -C gen77 gen77
+	#$(MAKE) -r -C gen90 gen90
+	#$(MAKE) -C genc genc
+	#$(MAKE) -r -C hrb hrb
+	#$(MAKE) -r -C ipopt ipopt
+	#$(MAKE) -r -C knitro knitro
+	#$(MAKE) -r -C la04 la04
+	#$(MAKE) -r -C lbfgs lbfgs
+	#$(MAKE) -r -C lbfgsb lbfgsb
+	#$(MAKE) -r -C lincoa lincoa
+	#$(MAKE) -r -C loqo loqo
+	#$(MAKE) -r -C minos minos
+	#$(MAKE) -r -C newuoa newuoa
+	#$(MAKE) -r -C nitsol nitsol
+	#$(MAKE) -r -C nlpqlp nlpqlp
+	#$(MAKE) -r -C npsol npsol
+	#$(MAKE) -r -C pds pds
+	#$(MAKE) -r -C pennlp pennlp
+	#$(MAKE) -r -C praxis praxis
+	#$(MAKE) -r -C ql ql
+	#$(MAKE) -r -C qplib qplib
+	#$(MAKE) -r -C snopt snopt
+	#$(MAKE) -r -C spg spg
+#	#$(MAKE) -r -C sqic #
+	#$(MAKE) -r -C stats stats
+	#$(MAKE) -r -C stenmin stenmin
+	#$(MAKE) -r -C tenmin tenmin
+	#$(MAKE) -r -C test test
+	#$(MAKE) -r -C tron tron
+	#$(MAKE) -r -C uncmin uncmin
+	#$(MAKE) -r -C vf13 vf13
 
 #  all tools (including tao) and interfaces
 
@@ -117,7 +117,7 @@ run_test_$(PRECIS): tools_${PRECIS} test_{PRECIS}
 	$(MAKE) -C cobyla run_test
 	$(MAKE) -C derchk run_test
 	$(MAKE) -C dfo run_test
-	$(MAKE) -C filtersd run_test 
+	$(MAKE) -C filtersd run_test
 	$(MAKE) -C filtersqp run_test
 	$(MAKE) -C gen77 run_test
 	$(MAKE) -C gen90 run_test
@@ -128,19 +128,19 @@ run_test_$(PRECIS): tools_${PRECIS} test_{PRECIS}
 	$(MAKE) -C la04 run_test
 	$(MAKE) -C lbfgs run_test
 	$(MAKE) -C lbfgsb run_test
-	$(MAKE) -C lincoa run_test 
+	$(MAKE) -C lincoa run_test
 	$(MAKE) -C minos run_test
-	$(MAKE) -C newuoa run_test 
+	$(MAKE) -C newuoa run_test
 	$(MAKE) -C nitsol run_test
-	$(MAKE) -C nlpqlp run_test 
+	$(MAKE) -C nlpqlp run_test
 	$(MAKE) -C npsol run_test
 	$(MAKE) -C pds run_test
 	$(MAKE) -C pennlp run_test
 	$(MAKE) -C praxis run_test
-	$(MAKE) -C ql run_test 
+	$(MAKE) -C ql run_test
 	$(MAKE) -C snopt run_test
-	$(MAKE) -C spg run_test 
-#	$(MAKE) -C sqic #            
+	$(MAKE) -C spg run_test
+#	$(MAKE) -C sqic #
 	$(MAKE) -C stats run_test
 	$(MAKE) -C stenmin run_test
 	$(MAKE) -C tenmin run_test
