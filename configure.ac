@@ -47,8 +47,9 @@ AC_PROG_FC
 # Checks for system
 # Services
 
-FCFLAGS=""
 CFLAGS=""
+FCFLAGS=""
+LDFLAGS=""
 
 AC_ARG_ENABLE([warnings],
     AS_HELP_STRING([--enable-warnings], [Enable warnings]),
@@ -70,7 +71,18 @@ AC_ARG_ENABLE([single],
     [PRECIS=double])
 AC_SUBST(PRECIS)
 
+AC_ARG_ENABLE([shared],
+    AS_HELP_STRING([--enable-shared], [Enable shared library]),
+    [LCUTEST="libcutest.so";
+     CFLAGS+="-fPIC ";
+     FCFLAGS+="-fPIC";
+     LDFLAGS+="-shared"],
+    [LCUTEST="libcutest.a"])
+AC_SUBST(LCUTEST)
+
+
 AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([src/Makefile])
 AC_CONFIG_FILES([bin/cutest2matlab], [chmod +x bin/cutest2matlab])
 AC_CONFIG_FILES([bin/runcutest], [chmod +x bin/runcutest])
 AC_CONFIG_FILES([sifdecode/bin/sifdecoder], [chmod +x sifdecode/bin/sifdecoder])

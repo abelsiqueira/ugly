@@ -4,7 +4,7 @@ export PKG=${PKGDIR}/${PRECIS}
 
 #  names of random libraries
 
-export LC=$(OBJ)/libcutest.a
+export LC=$(OBJ)/@LCUTEST@
 export BLC=$(OBJ)/libcutest_blas.a
 export DLC=$(OBJ)/libcutest_dummy.a
 export LLC=$(OBJ)/libcutest_lapack.a
@@ -35,17 +35,17 @@ export CSEDS=$(CUTEST)/seds/cutersize.sed
 build: all
 
 all: tools_${PRECIS}
-	$(MAKE) -r -C algencan algencan
-	$(MAKE) -r -C bobyqa bobyqa
-	$(MAKE) -r -C cg_descent cg_descent
-	$(MAKE) -r -C cgplus cgplus
-	$(MAKE) -r -C cobyla cobyla
+	#$(MAKE) -r -C algencan algencan
+	#$(MAKE) -r -C bobyqa bobyqa
+	#$(MAKE) -r -C cg_descent cg_descent
+	#$(MAKE) -r -C cgplus cgplus
+	#$(MAKE) -r -C cobyla cobyla
 	#$(MAKE) -r -C derchk derchk
 	#$(MAKE) -r -C dfo dfo
 	#$(MAKE) -r -C directsearch directsearch
 	#$(MAKE) -r -C filtersd filtersd
 	#$(MAKE) -r -C filtersqp filtersqp
-	$(MAKE) -r -C gen77 gen77
+	#$(MAKE) -r -C gen77 gen77
 	#$(MAKE) -r -C gen90 gen90
 	#$(MAKE) -C genc genc
 	#$(MAKE) -r -C hrb hrb

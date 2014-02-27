@@ -30,7 +30,7 @@ SED=sed
 TAIL=tail
 
 FC=gfortran
-PROBFLAGS="-ffixed-form -c"
+PROBFLAGS="-fPIC -ffixed-form -c"
 
 . $ARCHDEFS/bin/helper_functions
 
@@ -428,6 +428,10 @@ do
         ${RM} ${i}.f90
     fi
 done
+gcc -lgfortran -shared -o libCUTEstJL.so ELFUN.o GROUP.o RANGE.o \
+    $(ls ${CUTEST}/objects/${MYARCH}/double/*.o)
+
+exit
 
 EXTER=""
 [[ -e EXTER.f && ! -s EXTER.f ]] && ${RM} EXTER.f

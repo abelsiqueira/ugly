@@ -25,6 +25,7 @@ export FC?=@FC@
 export FFLAGS?=@FCFLAGS@ $(BASIC) $(OPTIMIZATION) $(DEBUG) $(MODULES) $(USUAL)
 export CC?=@CC@
 export CFLAGS?=@CFLAGS@ $(CBASIC) $(OPTIMIZATION) $(CCDEBUG) -I$(CUTEST)/include
+export LDFLAGS=@LDFLAGS@
 
 # Commands
 export AWK?=awk

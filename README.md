@@ -24,7 +24,7 @@ git submodule init
 git submodule update
 ~~~
 
-## Installation
+## Default Installation
 
 **WARNING**: this is a work in progress and only work with some solvers (for
 more information see 2483de6).
@@ -41,12 +41,25 @@ $ make install
 $ runcutest -p gen77 -D HS11
 ~~~
 
+## Julia Installation
+
+~~~
+$ ./configure --shared
+$ make
+$ make install
+~~~
+
+## Using from Julia
+
+See [this instructions](https://github.com/lpoo/CUTEst.jl#Using).
+
 ## CUTEst's Problems
 
 - [x] It use SVN.
 - [ ] It's architecture dependent.
 - [ ] It's OS dependent.
 - [x] It didn't follow the Unix installation steps.
+- [ ] Only use static library.
 
 ## Solutions to CUTEst's Problems
 
@@ -75,3 +88,7 @@ $ make install
 **Note**: Due CUTEst compatibility with many architectures and operating system is hard to
 follow the steps above. Since ugly remove this compatibility it's easy to
 achieve the installation with only this steps.
+
+### Static Library
+
+To build interfaces for some languages, e.g. Julia, it needs shared library.
