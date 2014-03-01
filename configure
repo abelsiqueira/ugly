@@ -584,6 +584,7 @@ PACKAGE_URL=''
 ac_subst_vars='LTLIBOBJS
 LIBOBJS
 PRECIS
+MASTSIF
 ac_ct_FC
 FCFLAGS
 FC
@@ -600,7 +601,6 @@ OS
 MACHINE
 MCH
 ARCHDEFS
-MASTSIF
 SIFDECODE_REQUIRED
 SIFDECODE
 CUTEST_REQUIRED
@@ -1803,8 +1803,6 @@ SIFDECODE=$(pwd)/sifdecode
 
 SIFDECODE_REQUIRED=1
 
-MASTSIF=$(pwd)/sif
-
 ARCHDEFS=$(pwd)/archdefs
 
 MCH="pc64"
@@ -2826,6 +2824,31 @@ ac_cpp='$CPP $CPPFLAGS'
 ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
 ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
 ac_compiler_gnu=$ac_cv_c_compiler_gnu
+
+
+echo "Checking if MASTSIF is set"
+as_ac_File=`$as_echo "ac_cv_file_$MASTSIF" | $as_tr_sh`
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $MASTSIF" >&5
+$as_echo_n "checking for $MASTSIF... " >&6; }
+if eval \${$as_ac_File+:} false; then :
+  $as_echo_n "(cached) " >&6
+else
+  test "$cross_compiling" = yes &&
+  as_fn_error $? "cannot check for file existence when cross compiling" "$LINENO" 5
+if test -r "$MASTSIF"; then
+  eval "$as_ac_File=yes"
+else
+  eval "$as_ac_File=no"
+fi
+fi
+eval ac_res=\$$as_ac_File
+	       { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_res" >&5
+$as_echo "$ac_res" >&6; }
+if eval test \"x\$"$as_ac_File"\" = x"yes"; then :
+
+else
+  as_fn_error $? "set MASTSIF=full/path/to/SIF/directory" "$LINENO" 5
+fi
 
 
 # Checks for libraries

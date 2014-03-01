@@ -11,8 +11,6 @@ SIFDECODE=$(pwd)/sifdecode
 AC_SUBST(SIFDECODE)
 SIFDECODE_REQUIRED=1
 AC_SUBST(SIFDECODE_REQUIRED)
-MASTSIF=$(pwd)/sif
-AC_SUBST(MASTSIF)
 ARCHDEFS=$(pwd)/archdefs
 AC_SUBST(ARCHDEFS)
 MCH="pc64"
@@ -37,6 +35,11 @@ echo "Testing for a C compiler"
 AC_PROG_CC
 echo "Testing for a FORTRAN compiler"
 AC_PROG_FC
+
+echo "Checking if MASTSIF is set"
+AC_CHECK_FILE([$MASTSIF],
+    [AC_SUBST(MASTSIF)],
+    [AC_MSG_ERROR([set MASTSIF=full/path/to/SIF/directory])])
 
 # Checks for libraries
 # Checks for header files
